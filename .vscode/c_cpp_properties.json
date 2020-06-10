@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "lkm",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/src/linux-headers-5.3.0-53-generic/include/",
+                "/usr/src/linux-headers-5.3.0-53-generic/include/uapi",
+                "/usr/src/linux-headers-5.3.0-53-generic/arch/x86/include/",
+                "/usr/src/linux-headers-5.3.0-53-generic/arch/x86/include/generated"
+            ],
+            "defines": [
+                "__KERNEL__",
+                "KBUILD_MODNAME=\"vtx\""
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu89",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
