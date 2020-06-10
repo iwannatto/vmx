@@ -1,22 +1,22 @@
-obj-m := vtx.o
+obj-m := vmx.o
 
-KERN_SRC := /usr/src/linux-headers-5.3.0-53-generic
+KERN_SRC := /usr/src/linux-headers-5.3.0-59-generic
 
 .PHONY: run ins msg rm clean
 
 run: ins rm msg
 
-vtx.ko: vtx.c
+vmx.ko: vmx.c
 	make -C $(KERN_SRC) M=$(PWD) modules
 
-ins: vtx.ko
+ins: vmx.ko
 	sudo insmod $<
 
 rm:
-	sudo rmmod vtx
+	sudo rmmod vmx
 
 msg:
-	dmesg -x | grep vtx
+	dmesg -x | grep vmx
 
 clean:
 	make -C $(KERN_SRC) M=$(PWD) clean
