@@ -1,6 +1,7 @@
 obj-m := vmx.o
 
-KERN_SRC := /usr/src/linux-headers-5.3.0-59-generic
+CFLAGS_vmx.o := -std=gnu11 -Wno-declaration-after-statement -mno-ms-bitfields
+KERN_SRC := /usr/src/linux-headers-5.3.0-62-generic
 
 .PHONY: run ins msg rm clean
 
@@ -16,7 +17,7 @@ rm:
 	sudo rmmod vmx
 
 msg:
-	dmesg -x | grep vmx
+	dmesg -x
 
 clean:
 	make -C $(KERN_SRC) M=$(PWD) clean

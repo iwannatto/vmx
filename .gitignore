@@ -1,0 +1,7 @@
+/.vmx*
+/Module.symvers
+/modules.order
+/*.ko
+/*.mod
+/*.mod.c
+/*.o
